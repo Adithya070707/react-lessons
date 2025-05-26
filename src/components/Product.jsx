@@ -11,3 +11,5 @@ export default function Product({ product, onAdd }) {
     </div>
   );
 }
+
+
