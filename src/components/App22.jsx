@@ -12,4 +12,4 @@ export default function App22() {
     fetchWeather();
   }, []);
   return <div style={{backgroundColor:'pink'}}>{tmp}</div>;
-}1
+}

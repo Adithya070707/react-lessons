@@ -1,17 +1,25 @@
 import React from "react";
+import Register from "./Register";
+import Login from "./Login";
 import { useState } from "react";
-import { useContext } from "react";
-import { AppContext } from "./App20";
-export default function App20b() {
-  //   const [count, setCount] = useState(0);
-  const { count, setCount } = useContext(AppContext);
+import { createContext } from "react";
+export const AppContext = createContext();
+export default function App21() {
+  const [users, setUsers] = useState([]);
   return (
     <div>
-      <h3>App20b</h3>
-      <p>{count}</p>
-      <p>
-        <button onClick={() => setCount(count + 1)}>Update Count</button>
-      </p>
+      <AppContext.Provider value={{ users, setUsers }}>
+        <h1>App21</h1>
+        <h2>Assignment</h2>
+        <div style={{ display: "flex" }}>
+          <div>
+            <Register />
+          </div>
+          <div>
+            <Login />
+          </div>
+        </div>
+      </AppContext.Provider>
     </div>
   );
 }
